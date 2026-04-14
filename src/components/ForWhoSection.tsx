@@ -1,0 +1,48 @@
+import { Home, Car, TrendingUp } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
+
+const profiles = [
+  {
+    icon: Home,
+    title: "Comprador de primeiro imóvel",
+    desc: "Você paga aluguel, tem renda estável e quer parar de financiar o patrimônio de outro. Mas acha que não tem entrada suficiente para o financiamento bancário.",
+  },
+  {
+    icon: Car,
+    title: "Quem acabou de comprar o carro",
+    desc: "Você comprovou que consegue honrar parcelas mensais. Agora é hora de usar essa mesma disciplina para construir patrimônio real.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Investidor iniciante",
+    desc: "Você já tem algum patrimônio e quer diversificar. Quer que o seu dinheiro trabalhe por você — e imóvel é o ativo que faz isso com segurança.",
+  },
+];
+
+const ForWhoSection = () => (
+  <section className="py-20 md:py-28 bg-background">
+    <div className="container mx-auto px-4">
+      <ScrollReveal>
+        <h2 className="font-display font-bold text-3xl md:text-4xl text-primary-deep text-center mb-16">
+          Esse método foi feito para você se...
+        </h2>
+      </ScrollReveal>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {profiles.map((p, i) => (
+          <ScrollReveal key={i} delay={0.1 * i}>
+            <div className="border border-primary/20 rounded-lg p-8 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
+                <p.icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-display font-bold text-lg text-foreground mb-3">{p.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{p.desc}</p>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default ForWhoSection;
