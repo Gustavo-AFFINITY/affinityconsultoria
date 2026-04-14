@@ -8,6 +8,7 @@ import AboutSection from "@/components/AboutSection";
 import DiagnosticCTA from "@/components/DiagnosticCTA";
 import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
+import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 
 const Index = () => (
@@ -22,6 +23,7 @@ const Index = () => (
     <DiagnosticCTA />
     <FAQSection />
     <FinalCTA />
+    <LeadForm />
     <Footer />
   </div>
 );
