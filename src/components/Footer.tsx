@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="container mx-auto px-4 text-center">
       <img src={logo} alt="AFFINITYMASTER" className="h-16 w-auto mx-auto mb-4" />
       <p className="text-silver text-sm mb-8">
-        Estratégia patrimonial inteligente para quem pensa no futuro
+        Estratégia inteligente para conquistar o carro dos seus sonhos
       </p>
 
       <div className="flex items-center justify-center gap-6 mb-8">

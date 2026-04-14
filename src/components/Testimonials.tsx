@@ -4,20 +4,20 @@ const testimonials = [
   {
     name: "Carlos Mendes",
     city: "Uberlândia, MG",
-    result: "Adquiriu imóvel de R$ 380.000 sem pagar juros",
-    quote: "Nunca imaginei que a mesma parcela que pagava no carro poderia me dar um imóvel. O método da AFFINITYMASTER mudou minha visão sobre dinheiro.",
+    result: "Conquistou um SUV de R$ 120.000 sem pagar juros",
+    quote: "Nunca imaginei que existia uma forma de comprar carro sem financiamento. O método da AFFINITYMASTER me economizou mais de R$ 30 mil em juros.",
   },
   {
     name: "Renata Oliveira",
     city: "Uberlândia, MG",
-    result: "Conquistou apartamento próprio em 36 meses",
-    quote: "Saí do aluguel com uma estratégia que fez sentido desde o primeiro diagnóstico. Planejamento real, sem promessa vazia.",
+    result: "Comprou o carro zero em 18 meses",
+    quote: "Estava quase fechando um financiamento bancário quando descobri essa estratégia. Hoje tenho meu carro zero e paguei muito menos por ele.",
   },
   {
     name: "Fernando e Ana Costa",
     city: "Uberlândia, MG",
-    result: "Dois imóveis adquiridos com a estratégia",
-    quote: "Começamos com um e, quando vimos o resultado, já partimos para o segundo. Hoje nosso patrimônio cresceu de forma que parecia impossível antes.",
+    result: "Dois veículos adquiridos com a estratégia",
+    quote: "Compramos o primeiro carro e, quando vimos o resultado, já partimos para o segundo. Nunca mais vamos voltar para financiamento bancário.",
   },
 ];
 
@@ -26,7 +26,7 @@ const Testimonials = () => (
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground text-center mb-16">
-          Quem aplicou a estratégia, não voltou ao financiamento
+          Quem usou a estratégia, nunca mais voltou ao financiamento
         </h2>
       </ScrollReveal>
 

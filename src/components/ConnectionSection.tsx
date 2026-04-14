@@ -2,9 +2,9 @@ import { Car, CalendarDays, BadgeDollarSign } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const cards = [
-  { icon: Car, label: "Da parcela do carro para a escritura do imóvel" },
-  { icon: CalendarDays, label: "Planejamento de 24 a 60 meses com parcelas previsíveis" },
-  { icon: BadgeDollarSign, label: "Sem juros. Sem surpresa. Sem banco no meio." },
+  { icon: Car, label: "Do sonho à garagem — com planejamento e sem surpresas" },
+  { icon: CalendarDays, label: "Parcelas que cabem no seu bolso, de 12 a 84 meses" },
+  { icon: BadgeDollarSign, label: "Sem juros. Sem entrada absurda. Sem banco no meio." },
 ];
 
 const ConnectionSection = () => (
@@ -12,20 +12,19 @@ const ConnectionSection = () => (
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-primary-deep text-center mb-6">
-          Parabéns pelo carro. Agora, vamos falar de patrimônio.
+          Chega de pagar juros para ter o carro que você merece.
         </h2>
       </ScrollReveal>
 
       <ScrollReveal delay={0.1}>
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-foreground/80 text-lg leading-relaxed">
-            Quem compra um carro financiado — ou à vista — demonstra algo importante:
-            tem renda, tem organização, e sabe assumir compromisso financeiro.
-            Esse perfil é exatamente o que permite acessar uma estratégia de aquisição
-            imobiliária que a maioria das pessoas nunca conheceu.
+            A maioria das pessoas acredita que financiamento bancário é o único caminho
+            para comprar um carro. Mas existe uma estratégia inteligente que te permite
+            conquistar o veículo dos seus sonhos pagando muito menos.
           </p>
           <p className="text-foreground/80 text-lg leading-relaxed mt-4">
-            Não é financiamento. Não é improviso. É planejamento patrimonial com método.
+            Não é improviso. É planejamento com método — e funciona.
           </p>
         </div>
       </ScrollReveal>

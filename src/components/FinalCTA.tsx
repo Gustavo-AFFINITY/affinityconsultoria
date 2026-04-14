@@ -1,7 +1,9 @@
 import ctaImage from "@/assets/cta-building.jpg";
 import ScrollReveal from "./ScrollReveal";
 
-const WHATSAPP_LINK = "https://wa.me/5534999999999?text=Olá! Gostaria de falar com um consultor sobre a estratégia patrimonial.";
+const scrollToForm = () => {
+  document.getElementById("formulario")?.scrollIntoView({ behavior: "smooth" });
+};
 
 const FinalCTA = () => (
   <section className="relative py-24 md:py-32 bg-primary-deep overflow-hidden">
@@ -12,20 +14,18 @@ const FinalCTA = () => (
     <div className="container mx-auto px-4 text-center relative z-10">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground mb-4">
-          Você já deu o primeiro passo com o carro.
+          O carro que você sempre quis
           <br />
-          O próximo passo é o imóvel.
+          está mais perto do que imagina.
         </h2>
       </ScrollReveal>
       <ScrollReveal delay={0.15}>
-        <a
-          href={WHATSAPP_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={scrollToForm}
           className="inline-block bg-primary hover:bg-navy text-primary-foreground font-display font-bold text-lg tracking-wider px-12 py-5 rounded-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 mt-8"
         >
-          FALAR COM UM CONSULTOR AGORA
-        </a>
+          QUERO CONQUISTAR MEU CARRO
+        </button>
       </ScrollReveal>
     </div>
   </section>
