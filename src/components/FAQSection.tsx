@@ -13,27 +13,27 @@ const faqs = [
   },
   {
     q: "Qual o valor mínimo de parcela mensal?",
-    a: "O valor da parcela é personalizado de acordo com o seu perfil financeiro e o imóvel desejado. Na maioria dos casos, conseguimos adequar ao orçamento que você já destina a outros compromissos financeiros.",
+    a: "O valor da parcela é personalizado de acordo com o seu perfil financeiro e o veículo desejado. Trabalhamos para adequar ao orçamento que você já tem disponível.",
   },
   {
-    q: "Em quanto tempo consigo adquirir o imóvel?",
-    a: "O prazo varia conforme a estratégia traçada para o seu perfil. Existem caminhos que podem levar à aquisição em até 24 meses, enquanto outros planos se estendem até 60 meses. Tudo é definido no seu planejamento personalizado.",
+    q: "Em quanto tempo consigo comprar o carro?",
+    a: "O prazo varia conforme a estratégia traçada para o seu perfil. Existem caminhos que podem levar à aquisição em poucos meses, enquanto outros planos se estendem até 84 meses. Tudo é definido no seu planejamento personalizado.",
   },
   {
     q: "Isso é seguro? É regulamentado?",
-    a: "Sim. Nossa estratégia é 100% legal e regulamentada pelo Banco Central do Brasil. Trabalhamos com instituições sólidas e fiscalizadas, garantindo total segurança jurídica em cada etapa.",
+    a: "Sim. Nossa estratégia é 100% legal e regulamentada pelo Banco Central do Brasil. Trabalhamos com instituições sólidas e fiscalizadas, garantindo total segurança em cada etapa.",
   },
   {
     q: "Tenho financiamento ativo. Posso participar mesmo assim?",
-    a: "Sim. Ter um financiamento ativo não impede a participação. Inclusive, muitos dos nossos clientes iniciaram a estratégia patrimonial enquanto ainda pagavam parcelas de veículos ou outros compromissos.",
+    a: "Sim. Ter um financiamento ativo não impede a participação. Inclusive, muitos dos nossos clientes iniciaram a estratégia enquanto ainda pagavam parcelas de outros compromissos.",
   },
   {
-    q: "Funciona para imóvel comercial também?",
-    a: "Sim. A estratégia pode ser aplicada tanto para imóveis residenciais quanto comerciais, terrenos e até mesmo para construção. Tudo depende do seu objetivo patrimonial.",
+    q: "Funciona para qualquer tipo de veículo?",
+    a: "Sim. A estratégia pode ser aplicada para carros populares, SUVs, picapes, veículos de luxo e até motos. Tudo depende do seu objetivo e orçamento.",
   },
   {
     q: "Como é feito o diagnóstico gratuito?",
-    a: "O diagnóstico é uma reunião de aproximadamente 30 minutos, presencial ou online, onde analisamos sua situação financeira atual, entendemos seus objetivos e apresentamos as possibilidades da estratégia para o seu perfil. Sem compromisso e sem custo.",
+    a: "O diagnóstico é uma conversa de aproximadamente 30 minutos, presencial ou online, onde analisamos sua situação financeira atual, entendemos o veículo que você deseja e apresentamos as possibilidades da estratégia para o seu perfil. Sem compromisso e sem custo.",
   },
 ];
 

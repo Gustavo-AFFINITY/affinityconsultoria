@@ -1,11 +1,11 @@
-import { Search, Target, PlayCircle, Home } from "lucide-react";
+import { Search, Target, PlayCircle, Car } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const steps = [
-  { icon: Search, title: "Diagnóstico gratuito", desc: "Analisamos sua situação financeira atual sem compromisso" },
-  { icon: Target, title: "Estratégia personalizada", desc: "Montamos um plano de aquisição sob medida para o seu perfil" },
-  { icon: PlayCircle, title: "Entrada no plano", desc: "Você começa com parcelas que já cabem no seu orçamento atual" },
-  { icon: Home, title: "Aquisição do imóvel", desc: "Você conquista o imóvel com planejamento, sem juros e sem depender de banco" },
+  { icon: Search, title: "Diagnóstico gratuito", desc: "Analisamos sua situação financeira e o veículo que você deseja, sem compromisso" },
+  { icon: Target, title: "Estratégia personalizada", desc: "Montamos um plano de aquisição sob medida para o seu perfil e orçamento" },
+  { icon: PlayCircle, title: "Entrada no plano", desc: "Você começa com parcelas que já cabem no seu bolso — sem juros" },
+  { icon: Car, title: "Conquista do veículo", desc: "Você conquista o carro dos seus sonhos com planejamento, sem depender de banco" },
 ];
 
 const HowItWorks = () => (
@@ -13,14 +13,14 @@ const HowItWorks = () => (
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground text-center mb-4">
-          Uma estratégia que os bancos não têm interesse em te mostrar
+          Uma estratégia que os bancos não querem que você conheça
         </h2>
       </ScrollReveal>
       <ScrollReveal delay={0.1}>
         <p className="text-silver text-center text-lg max-w-3xl mx-auto mb-16">
           Não é financiamento. Não é investimento de risco.
-          É um método estruturado de aquisição patrimonial — legal, regulamentado
-          e aplicado com inteligência pela AFFINITYMASTER há anos em Uberlândia.
+          É um método estruturado de aquisição — legal, regulamentado
+          e aplicado com inteligência pela AFFINITYMASTER em Uberlândia.
         </p>
       </ScrollReveal>
 

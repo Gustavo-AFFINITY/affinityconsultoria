@@ -1,12 +1,14 @@
 import { Check } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
-const WHATSAPP_LINK = "https://wa.me/5534999999999?text=Olá! Gostaria de agendar meu diagnóstico patrimonial gratuito.";
+const scrollToForm = () => {
+  document.getElementById("formulario")?.scrollIntoView({ behavior: "smooth" });
+};
 
 const benefits = [
   "Análise do seu perfil financeiro atual",
-  "Simulação de estratégia de aquisição personalizada",
-  "Comparativo real: sua situação hoje vs. com a estratégia aplicada",
+  "Simulação de estratégia de aquisição personalizada para o veículo desejado",
+  "Comparativo real: financiamento bancário vs. nossa estratégia",
   "Sem compromisso. Sem pressão. 100% gratuito.",
 ];
 
@@ -15,7 +17,7 @@ const DiagnosticCTA = () => (
     <div className="container mx-auto px-4 text-center">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground mb-12">
-          Diagnóstico Patrimonial Gratuito
+          Diagnóstico Gratuito — Descubra Quanto Você Pode Economizar
         </h2>
       </ScrollReveal>
 
@@ -33,16 +35,14 @@ const DiagnosticCTA = () => (
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
-        <a
-          href={WHATSAPP_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={scrollToForm}
           className="inline-block bg-primary hover:bg-primary-deep text-primary-foreground font-display font-bold text-lg tracking-wider px-12 py-5 rounded-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
         >
-          AGENDAR MEU DIAGNÓSTICO GRATUITO
-        </a>
+          QUERO MEU DIAGNÓSTICO GRATUITO
+        </button>
         <p className="text-silver/50 text-sm mt-4">
-          Atendimentos limitados por semana. Garanta o seu horário.
+          Atendimentos limitados por semana. Garanta o seu.
         </p>
       </ScrollReveal>
     </div>

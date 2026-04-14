@@ -1,21 +1,21 @@
-import { Home, Car, TrendingUp } from "lucide-react";
+import { Car, Wallet, TrendingUp } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const profiles = [
   {
-    icon: Home,
-    title: "Comprador de primeiro imóvel",
-    desc: "Você paga aluguel, tem renda estável e quer parar de financiar o patrimônio de outro. Mas acha que não tem entrada suficiente para o financiamento bancário.",
+    icon: Car,
+    title: "Quem quer o primeiro carro",
+    desc: "Você sonha com o carro próprio, tem renda estável, mas acha que não consegue juntar a entrada para o financiamento bancário.",
   },
   {
-    icon: Car,
-    title: "Quem acabou de comprar o carro",
-    desc: "Você comprovou que consegue honrar parcelas mensais. Agora é hora de usar essa mesma disciplina para construir patrimônio real.",
+    icon: Wallet,
+    title: "Quem quer trocar de carro",
+    desc: "Você já tem um veículo, mas quer fazer um upgrade sem se afundar em juros de financiamento. Quer pagar menos pelo carro novo.",
   },
   {
     icon: TrendingUp,
-    title: "Investidor iniciante",
-    desc: "Você já tem algum patrimônio e quer diversificar. Quer que o seu dinheiro trabalhe por você — e imóvel é o ativo que faz isso com segurança.",
+    title: "Quem quer economizar de verdade",
+    desc: "Você sabe que financiamento é caro e quer uma alternativa inteligente. Quer o carro dos sonhos pagando o preço justo — sem juros.",
   },
 ];
 
@@ -24,7 +24,7 @@ const ForWhoSection = () => (
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-primary-deep text-center mb-16">
-          Esse método foi feito para você se...
+          Essa estratégia foi feita para você se...
         </h2>
       </ScrollReveal>
 
