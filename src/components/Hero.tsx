@@ -6,7 +6,7 @@ const scrollToForm = () => {
 };
 
 const Hero = () => (
-  <section className="relative min-h-screen flex items-center bg-navy geometric-pattern-light overflow-hidden">
+  <section className="relative min-h-screen flex items-center bg-navy overflow-hidden">
     <div className="absolute inset-0">
       <img src={heroImage} alt="" className="w-full h-full object-cover opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/70" />
