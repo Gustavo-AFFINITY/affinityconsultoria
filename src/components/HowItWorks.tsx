@@ -1,5 +1,6 @@
 import { Search, Target, PlayCircle, Car } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import carBg from "@/assets/dark-car-bg.jpg";
 
 const steps = [
   { icon: Search, title: "Diagnóstico gratuito", desc: "Analisamos sua situação financeira e o veículo que você deseja, sem compromisso" },
@@ -9,7 +10,10 @@ const steps = [
 ];
 
 const HowItWorks = () => (
-  <section className="py-20 md:py-28 bg-navy geometric-pattern-light">
+  <section
+    className="py-20 md:py-28 bg-navy car-bg-section"
+    style={{ ["--car-bg-image" as string]: `url(${carBg})` }}
+  >
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground text-center mb-4">
@@ -27,14 +31,14 @@ const HowItWorks = () => (
       <div className="max-w-4xl mx-auto">
         {steps.map((step, i) => (
           <ScrollReveal key={i} delay={0.1 * i}>
-            <div className="flex gap-6 mb-10 last:mb-0 items-start">
-              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center relative">
-                <step.icon className="w-6 h-6 text-primary" />
-                <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center font-display">
+            <div className="flex gap-5 mb-10 last:mb-0 items-start">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center relative">
+                <step.icon className="w-5 h-5 text-primary" strokeWidth={2} />
+                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center font-display">
                   {i + 1}
                 </span>
               </div>
-              <div>
+              <div className="flex-1 pt-1">
                 <h3 className="font-display font-bold text-xl text-navy-foreground mb-1">{step.title}</h3>
                 <p className="text-silver text-base">{step.desc}</p>
               </div>

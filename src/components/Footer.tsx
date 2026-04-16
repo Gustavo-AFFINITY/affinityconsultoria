@@ -43,8 +43,18 @@ const Footer = () => (
         </a>
       </div>
 
-      <p className="text-silver/40 text-xs">Uberlândia, MG</p>
-      <p className="text-silver/30 text-xs mt-2">
+      <div className="max-w-md mx-auto border-t border-silver/10 pt-6 mb-6 space-y-1">
+        <p className="text-silver/70 text-sm">
+          Vendedor direto:{" "}
+          <a href="tel:+5534991097072" className="text-navy-foreground hover:text-primary transition-colors font-semibold">
+            (34) 99109-7072
+          </a>
+        </p>
+        <p className="text-silver/60 text-xs">CNPJ: 07.108.118/0001-87</p>
+        <p className="text-silver/40 text-xs">Uberlândia, MG</p>
+      </div>
+
+      <p className="text-silver/30 text-xs">
         © {new Date().getFullYear()} AFFINITYMASTER. Todos os direitos reservados.
       </p>
     </div>

@@ -22,7 +22,7 @@ const testimonials = [
 ];
 
 const Testimonials = () => (
-  <section className="py-20 md:py-28 bg-navy geometric-pattern-light">
+  <section className="py-20 md:py-28 bg-navy refined-dark">
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground text-center mb-16">
