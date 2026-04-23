@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 
 const scrollToForm = () => {
@@ -35,12 +36,15 @@ const DiagnosticCTA = () => (
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
-        <button
+        <motion.button
           onClick={scrollToForm}
-          className="inline-block bg-primary hover:bg-primary-deep text-primary-foreground font-display font-bold text-lg tracking-wider px-12 py-5 rounded-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.97 }}
+          className="relative inline-block bg-primary text-primary-foreground font-display font-bold text-lg tracking-wider px-12 py-5 rounded-md transition-colors duration-300 hover:bg-primary-deep animate-pulse-glow overflow-hidden group"
         >
-          QUERO MEU DIAGNÓSTICO GRATUITO
-        </button>
+          <span className="relative z-10">QUERO MEU DIAGNÓSTICO GRATUITO</span>
+          <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+        </motion.button>
         <p className="text-silver/50 text-sm mt-4">
           Atendimentos limitados por semana. Garanta o seu.
         </p>

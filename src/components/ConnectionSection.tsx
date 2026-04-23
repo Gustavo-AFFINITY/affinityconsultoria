@@ -1,4 +1,5 @@
 import { Car, CalendarDays, BadgeDollarSign } from "lucide-react";
+import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 
 const cards = [
@@ -32,10 +33,16 @@ const ConnectionSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {cards.map((card, i) => (
           <ScrollReveal key={i} delay={0.1 * i}>
-            <div className="border border-primary/20 rounded-lg p-8 text-center hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full">
-              <card.icon className="w-10 h-10 text-primary mx-auto mb-4" strokeWidth={1.5} />
+            <motion.div
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="border border-primary/20 rounded-lg p-8 text-center hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-shadow duration-300 h-full group"
+            >
+              <div className="inline-block group-hover:animate-float">
+                <card.icon className="w-10 h-10 text-primary mx-auto mb-4 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.5} />
+              </div>
               <p className="font-display font-semibold text-foreground">{card.label}</p>
-            </div>
+            </motion.div>
           </ScrollReveal>
         ))}
       </div>
