@@ -1,4 +1,28 @@
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect, useRef } from "react";
 import ScrollReveal from "./ScrollReveal";
+
+const Counter = ({ to, suffix = "" }: { to: number; suffix?: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (v) => Math.floor(v).toString() + suffix);
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(count, to, { duration: 1.8, ease: "easeOut" });
+      return controls.stop;
+    }
+  }, [inView, to, count]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+};
+
+const stats = [
+  { number: 500, suffix: "+", label: "Clientes atendidos" },
+  { number: 300, suffix: "+", label: "Veículos adquiridos via estratégia" },
+  { number: 8, suffix: "", label: "Anos de atuação em Uberlândia" },
+];
 
 const AboutSection = () => (
   <section className="py-20 md:py-28 bg-background">
@@ -26,15 +50,18 @@ const AboutSection = () => (
 
         <ScrollReveal delay={0.2}>
           <div className="grid grid-cols-1 gap-6">
-            {[
-              { number: "500+", label: "Clientes atendidos" },
-              { number: "300+", label: "Veículos adquiridos via estratégia" },
-              { number: "8", label: "Anos de atuação em Uberlândia" },
-            ].map((stat, i) => (
-              <div key={i} className="bg-primary/5 rounded-lg p-6 text-center border border-primary/10">
-                <p className="font-display font-bold text-3xl text-primary mb-1">{stat.number}</p>
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.03, x: 4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-primary/5 rounded-lg p-6 text-center border border-primary/10 hover:border-primary/30 hover:bg-primary/10 transition-colors"
+              >
+                <p className="font-display font-bold text-3xl text-primary mb-1">
+                  <Counter to={stat.number} suffix={stat.suffix} />
+                </p>
                 <p className="text-muted-foreground font-body text-sm">{stat.label}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </ScrollReveal>

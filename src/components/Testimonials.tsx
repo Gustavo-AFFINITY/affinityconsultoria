@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 
 const testimonials = [
@@ -33,7 +34,11 @@ const Testimonials = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {testimonials.map((t, i) => (
           <ScrollReveal key={i} delay={0.1 * i}>
-            <div className="border border-silver/20 rounded-lg p-8 h-full flex flex-col">
+            <motion.div
+              whileHover={{ y: -6, borderColor: "hsl(var(--primary) / 0.5)" }}
+              transition={{ type: "spring", stiffness: 250, damping: 18 }}
+              className="border border-silver/20 rounded-lg p-8 h-full flex flex-col bg-navy/40 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/10"
+            >
               <p className="text-primary font-display font-bold text-sm mb-4">{t.result}</p>
               <p className="text-navy-foreground/80 italic leading-relaxed flex-1 mb-6">"{t.quote}"</p>
               <div className="flex items-center gap-3">
@@ -47,7 +52,7 @@ const Testimonials = () => (
                   <p className="text-silver text-xs">{t.city}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </ScrollReveal>
         ))}
       </div>
