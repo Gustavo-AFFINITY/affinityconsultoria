@@ -18,7 +18,7 @@ const DiagnosticCTA = () => (
     <div className="container mx-auto px-4 text-center relative z-10">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground mb-12">
-          Diagnóstico Gratuito — Descubra Quanto Você Pode Economizar
+          Diagnóstico Gratuito  Descubra Quanto Você Pode Economizar
         </h2>
       </ScrollReveal>
 
