@@ -6,7 +6,7 @@ import carBg from "@/assets/dark-car-bg.jpg";
 const steps = [
   { icon: Search, title: "Diagnóstico gratuito", desc: "Analisamos sua situação financeira e o veículo que você deseja, sem compromisso" },
   { icon: Target, title: "Estratégia personalizada", desc: "Montamos um plano de aquisição sob medida para o seu perfil e orçamento" },
-  { icon: PlayCircle, title: "Entrada no plano", desc: "Você começa com parcelas que já cabem no seu bolso — sem juros" },
+  { icon: PlayCircle, title: "Entrada no plano", desc: "Você começa com parcelas que já cabem no seu bolso sem juros" },
   { icon: Car, title: "Conquista do veículo", desc: "Você conquista o carro dos seus sonhos com planejamento, sem depender de banco" },
 ];
 
@@ -24,7 +24,7 @@ const HowItWorks = () => (
       <ScrollReveal delay={0.1}>
         <p className="text-silver text-center text-lg max-w-3xl mx-auto mb-16">
           Não é financiamento. Não é investimento de risco.
-          É um método estruturado de aquisição — legal, regulamentado
+          É um método estruturado de aquisição legal, regulamentado
           e aplicado com inteligência pela AFFINITYMASTER em Uberlândia.
         </p>
       </ScrollReveal>

@@ -38,7 +38,7 @@ const AboutSection = () => (
               especializada em estratégias inteligentes para aquisição de veículos.
             </p>
             <p className="text-foreground/80 text-lg leading-relaxed mb-4">
-              Nosso método ajuda pessoas a conquistarem o carro dos sonhos —
+              Nosso método ajuda pessoas a conquistarem o carro dos sonhos
               sem depender de financiamento bancário e sem comprometer o orçamento familiar.
             </p>
             <p className="text-foreground/80 text-lg leading-relaxed">

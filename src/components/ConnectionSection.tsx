@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 
 const cards = [
-  { icon: Car, label: "Do sonho à garagem — com planejamento e sem surpresas" },
+  { icon: Car, label: "Do sonho à garagem com planejamento e sem surpresas" },
   { icon: CalendarDays, label: "Parcelas que cabem no seu bolso, de 12 a 84 meses" },
   { icon: BadgeDollarSign, label: "Sem juros. Sem entrada absurda. Sem banco no meio." },
 ];
@@ -25,7 +25,7 @@ const ConnectionSection = () => (
             conquistar o veículo dos seus sonhos pagando muito menos.
           </p>
           <p className="text-foreground/80 text-lg leading-relaxed mt-4">
-            Não é improviso. É planejamento com método — e funciona.
+            Não é improviso. É planejamento com método.
           </p>
         </div>
       </ScrollReveal>

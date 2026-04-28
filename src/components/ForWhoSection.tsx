@@ -16,7 +16,7 @@ const profiles = [
   {
     icon: TrendingUp,
     title: "Quem quer economizar de verdade",
-    desc: "Você sabe que financiamento é caro e quer uma alternativa inteligente. Quer o carro dos sonhos pagando o preço justo — sem juros.",
+    desc: "Você sabe que financiamento é caro e quer uma alternativa inteligente. Quer o carro dos sonhos pagando o preço justo sem juros.",
   },
 ];
 
