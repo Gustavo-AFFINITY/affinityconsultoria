@@ -1,20 +1,24 @@
-## Problema
+Entendi. A mensagem de bloqueio provavelmente continua porque Instagram/WhatsApp ainda estão tentando abrir dentro do ambiente de preview do Lovable ou estão sendo tratados como pop-up. A alternativa mais segura é não depender de `window.open()` no clique e sim trocar o comportamento para navegação direta do navegador.
 
-A mensagem "Instagram bloqueado" aparece porque o preview da Lovable roda dentro de um **iframe**. O Instagram (e várias outras plataformas) bloqueia ser carregado dentro de iframes por segurança (X-Frame-Options). Mesmo com `target="_blank"`, alguns navegadores tentam abrir a aba dentro do contexto do iframe.
+Plano de correção:
 
-Importante: **no site publicado (fora do preview), esses links já funcionariam normalmente**. Mas vamos blindar para funcionar em qualquer contexto.
+1. Ajustar os botões do rodapé
+   - Remover o `onClick` com `window.open()` dos links sociais.
+   - Usar links HTML normais, com `target="_top"`, para forçar a abertura fora do iframe/preview atual.
+   - Manter `rel="noopener noreferrer"`.
 
-## Solução
+2. Usar URLs mais compatíveis
+   - Instagram: `https://www.instagram.com/affinitycor/`
+   - WhatsApp: `https://wa.me/5534991097072` ou `https://api.whatsapp.com/send?phone=5534991097072`
+   - Se necessário, usar a versão `https://l.instagram.com/?u=...` não será a primeira opção, porque pode parecer menos confiável para o usuário.
 
-Editar `src/components/Footer.tsx` para:
+3. Adicionar alternativa visível no rodapé
+   - Para evitar dependência total de links externos no preview, deixar também o texto do Instagram `@affinitycor` e o telefone `(34) 99109-7072` visíveis e copiáveis.
+   - Assim, mesmo se o ambiente de teste bloquear o Instagram, o visitante consegue identificar o contato.
 
-1. **Forçar abertura em nova aba via `window.open`** com `onClick` que chama `e.preventDefault()` antes — isso escapa o iframe de forma confiável.
-2. **Trocar o link do WhatsApp** de `wa.me` para `https://api.whatsapp.com/send?phone=5534991097072`, que é mais robusto e funciona melhor em desktop/mobile.
-3. **Garantir URL completa do Instagram**: `https://www.instagram.com/affinitycor/` (com `www` e barra final).
-4. Manter `target="_blank"` + `rel="noopener noreferrer"` como fallback.
+4. Teste após a alteração
+   - Verificar se os botões continuam clicáveis.
+   - Confirmar que o clique tenta sair do preview atual em vez de carregar Instagram/WhatsApp dentro da moldura do Lovable.
 
-## Resultado esperado
-
-- Clicar no ícone do Instagram → abre `instagram.com/affinitycor` em nova aba do navegador.
-- Clicar no ícone do WhatsApp → abre conversa direta com (34) 99109-7072 em nova aba.
-- Sem mais mensagem de bloqueio do Instagram dentro do preview.
+Observação importante:
+Esse bloqueio é típico do Instagram, não do site em si. O Instagram impede ser aberto dentro de iframes por segurança. Em produção, fora do preview do Lovable, o link tende a funcionar normalmente. A alteração proposta força a navegação para fora da moldura do preview, que é a forma mais compatível para esse caso.
