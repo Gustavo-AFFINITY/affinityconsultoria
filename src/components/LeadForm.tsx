@@ -105,7 +105,6 @@ const LeadForm = () => {
                 className="flex h-10 w-full rounded-md border border-silver/30 bg-navy-foreground/10 px-3 py-2 text-base text-navy-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 md:text-sm"
               >
                 <option value="" className="bg-navy text-navy-foreground">Selecione...</option>
-                <option value="ate-500" className="bg-navy text-navy-foreground">Até R$ 500/mês</option>
                 <option value="500-1000" className="bg-navy text-navy-foreground">R$ 500 a R$ 1.000/mês</option>
                 <option value="1000-2000" className="bg-navy text-navy-foreground">R$ 1.000 a R$ 2.000/mês</option>
                 <option value="2000-3000" className="bg-navy text-navy-foreground">R$ 2.000 a R$ 3.000/mês</option>
