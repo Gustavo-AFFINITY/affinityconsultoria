@@ -5,8 +5,8 @@ import ScrollReveal from "./ScrollReveal";
 const profiles = [
   {
     icon: Car,
-    title: "Quem quer o primeiro carro",
-    desc: "Você sonha com o carro próprio, tem renda estável, mas acha que não consegue juntar a entrada para o financiamento bancário.",
+    title: "Quer economizar de verdade",
+    desc: "Você sabe que financiamento é caro e quer uma alternativa inteligente.",
   },
   {
     icon: Wallet,
@@ -25,7 +25,7 @@ const ForWhoSection = () => (
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-primary-deep text-center mb-16">
-          Essa estratégia foi feita para você se...
+          Essa estratégia foi feita para você que...
         </h2>
       </ScrollReveal>
 

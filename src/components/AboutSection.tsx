@@ -21,7 +21,7 @@ const Counter = ({ to, suffix = "" }: { to: number; suffix?: string }) => {
 const stats = [
   { number: 500, suffix: "+", label: "Clientes atendidos" },
   { number: 300, suffix: "+", label: "Veículos adquiridos via estratégia" },
-  { number: 8, suffix: "", label: "Anos de atuação em Uberlândia" },
+  { number: 21, suffix: "", label: "Anos de atuação em Uberlândia" },
 ];
 
 const AboutSection = () => (
@@ -34,12 +34,12 @@ const AboutSection = () => (
               Consultoria especializada em aquisição automotiva inteligente
             </h2>
             <p className="text-foreground/80 text-lg leading-relaxed mb-4">
-              A AFFINITYMASTER é uma consultoria com atuação em Uberlândia/MG,
+              A AFFINITYMASTER é uma consultoria com atuação em Uberlândia/MG e região,
               especializada em estratégias inteligentes para aquisição de veículos.
             </p>
             <p className="text-foreground/80 text-lg leading-relaxed mb-4">
-              Nosso método ajuda pessoas a conquistarem o carro dos sonhos
-              sem depender de financiamento bancário e sem comprometer o orçamento familiar.
+              Auxiliamos você a conquistar o carro dos sonhos
+              sem depender de financiamento bancário e sem comprometer a renda familiar.
             </p>
             <p className="text-foreground/80 text-lg leading-relaxed">
               Atendimento personalizado, diagnóstico gratuito e acompanhamento em cada
