@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Tenho financiamento ativo. Posso participar mesmo assim?",
-    a: "Sim. Ter um financiamento ativo não impede a participação. Inclusive, muitos dos nossos clientes iniciaram a estratégia enquanto ainda pagavam parcelas de outros compromissos.",
+    a: "Sim. Ter um financiamento ativo não impede a participação. Inclusive, many dos nossos clientes já quitaram o financiamento com a estratégia.",
   },
   {
     q: "Funciona para qualquer tipo de veículo?",
