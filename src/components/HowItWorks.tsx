@@ -7,7 +7,7 @@ const steps = [
   { icon: Search, title: "Diagnóstico gratuito", desc: "Analisamos sua situação financeira e o veículo que deseja" },
   { icon: Target, title: "Estratégia personalizada", desc: "Montamos um plano de aquisição sob medida para o seu perfil e orçamento" },
   { icon: PlayCircle, title: "Entrada no plano", desc: "Você começa com parcelas que já cabem no seu bolso sem juros" },
-  { icon: Car, title: "Conquista do veículo", desc: "Analisamos sua situação financeira e o veículo que você deseja " },
+  { icon: Car, title: "Conquista do veículo", desc: "Você conquista o carro dos seus sonhos sem pagar juros" },
 ];
 
 const HowItWorks = () => (
