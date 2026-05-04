@@ -13,19 +13,19 @@ const ConnectionSection = () => (
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-primary-deep text-center mb-6">
-          Chega de pagar juros para ter o carro que você merece.
+          Chega de pagar juros para ter o carro que você quer.
         </h2>
       </ScrollReveal>
 
       <ScrollReveal delay={0.1}>
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-foreground/80 text-lg leading-relaxed">
-            A maioria das pessoas acredita que financiamento bancário é o único caminho
-            para comprar um carro. Mas existe uma estratégia inteligente que te permite
-            conquistar o veículo dos seus sonhos pagando muito menos.
+            A maioria das pessoas utilizam o financiamento bancário para comprar um carro.
+            Mas você pode comprar o mesmo carro sem pagar juros, com uma estratégia
+            inteligente e econômica.
           </p>
           <p className="text-foreground/80 text-lg leading-relaxed mt-4">
-            Não é improviso. É planejamento com método.
+            <br />
           </p>
         </div>
       </ScrollReveal>
