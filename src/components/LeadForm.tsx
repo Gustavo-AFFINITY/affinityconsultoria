@@ -5,6 +5,7 @@ import { toast } from "@/hooks/use-toast";
 
 const LeadForm = () => {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [monthlyBudget, setMonthlyBudget] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,8 +21,13 @@ const LeadForm = () => {
     e.preventDefault();
 
     const phoneDigits = phone.replace(/\D/g, "");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!name.trim() || name.trim().length < 2) {
       toast({ title: "Preencha seu nome completo", variant: "destructive" });
+      return;
+    }
+    if (!emailRegex.test(email.trim()) || email.trim().length > 255) {
+      toast({ title: "Informe um e-mail válido", variant: "destructive" });
       return;
     }
     if (phoneDigits.length < 10 || phoneDigits.length > 11) {
@@ -43,6 +49,7 @@ const LeadForm = () => {
         description: "Nossa equipe entrará em contato em breve.",
       });
       setName("");
+      setEmail("");
       setPhone("");
       setMonthlyBudget("");
     }, 1500);
@@ -76,6 +83,21 @@ const LeadForm = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 maxLength={100}
+                className="bg-navy-foreground/10 border-silver/30 text-navy-foreground placeholder:text-silver/50 focus-visible:ring-primary"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-navy-foreground font-display font-semibold text-sm mb-2">
+                E-mail
+              </label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="seu@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={255}
                 className="bg-navy-foreground/10 border-silver/30 text-navy-foreground placeholder:text-silver/50 focus-visible:ring-primary"
               />
             </div>

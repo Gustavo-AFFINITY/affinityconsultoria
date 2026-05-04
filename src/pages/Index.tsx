@@ -7,7 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import AboutSection from "@/components/AboutSection";
 import DiagnosticCTA from "@/components/DiagnosticCTA";
 import FAQSection from "@/components/FAQSection";
-import FinalCTA from "@/components/FinalCTA";
+
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 
@@ -22,7 +22,7 @@ const Index = () => (
     <AboutSection />
     <DiagnosticCTA />
     <FAQSection />
-    <FinalCTA />
+    
     <LeadForm />
     <Footer />
   </div>
