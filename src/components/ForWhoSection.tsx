@@ -5,8 +5,8 @@ import ScrollReveal from "./ScrollReveal";
 const profiles = [
   {
     icon: Car,
-    title: "Quer economizar de verdade",
-    desc: "Você sabe que financiamento é caro e quer uma alternativa inteligente.",
+    title: "Quer o primeiro carro",
+    desc: "Você quer comprar o primeiro carro próprio, tem renda estável e não quer pagar juros.",
   },
   {
     icon: Wallet,
