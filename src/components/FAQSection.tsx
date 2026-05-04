@@ -9,7 +9,7 @@ import ScrollReveal from "./ScrollReveal";
 const faqs = [
   {
     q: "Preciso ter entrada para começar?",
-    a: "Não necessariamente. Nossa estratégia permite iniciar com parcelas acessíveis, sem a exigência de uma grande entrada como nos financiamentos tradicionais. No diagnóstico gratuito, analisamos seu perfil para encontrar a melhor forma de começar.",
+    a: "Nossa estratégia permite você iniciar com parcelas acessíveis, sem a exigência de uma grande entrada como nos financiamentos tradicionais. No diagnóstico gratuito, analisamos seu perfil para encontrar a melhor forma de começar.",
   },
   {
     q: "Qual o valor mínimo de parcela mensal?",
