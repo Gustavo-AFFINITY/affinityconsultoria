@@ -37,7 +37,7 @@ const HowItWorks = () => (
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.4, ease: "easeOut" }}
           style={{ transformOrigin: "top" }}
-          className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-primary/40 to-transparent hidden sm:block"
+          className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-primary/40 to-transparent hidden sm:block text-center"
         />
 
         {steps.map((step, i) => (
