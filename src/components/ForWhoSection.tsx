@@ -10,8 +10,8 @@ const profiles = [
   },
   {
     icon: Wallet,
-    title: "Quem quer trocar de carro",
-    desc: "Você já tem um veículo, mas quer fazer um upgrade sem se afundar em juros de financiamento. Quer pagar menos pelo carro novo.",
+    title: "Quer trocar de carro",
+    desc: "Você já tem um veículo e quer fazer um upgrade, pagando menos pelo carro novo.",
   },
   {
     icon: TrendingUp,
