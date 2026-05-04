@@ -139,7 +139,7 @@ const LeadForm = () => {
               disabled={loading}
               className="w-full bg-primary hover:bg-primary-deep text-primary-foreground font-display font-bold text-lg tracking-wider py-4 rounded-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 disabled:opacity-60"
             >
-              {loading ? "ENVIANDO..." : ""}
+              {loading ? "ENVIANDO..." : "QUERO MEU DIAGNÓSTICO GRATUITO"}
             </button>
 
             <p className="text-silver/50 text-xs text-center">
