@@ -22,7 +22,7 @@ const Index = () => (
     <AboutSection />
     <DiagnosticCTA />
     <FAQSection />
-    <FinalCTA />
+    
     <LeadForm />
     <Footer />
   </div>

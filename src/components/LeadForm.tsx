@@ -5,6 +5,7 @@ import { toast } from "@/hooks/use-toast";
 
 const LeadForm = () => {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [monthlyBudget, setMonthlyBudget] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,8 +21,13 @@ const LeadForm = () => {
     e.preventDefault();
 
     const phoneDigits = phone.replace(/\D/g, "");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!name.trim() || name.trim().length < 2) {
       toast({ title: "Preencha seu nome completo", variant: "destructive" });
+      return;
+    }
+    if (!emailRegex.test(email.trim()) || email.trim().length > 255) {
+      toast({ title: "Informe um e-mail válido", variant: "destructive" });
       return;
     }
     if (phoneDigits.length < 10 || phoneDigits.length > 11) {
@@ -43,6 +49,7 @@ const LeadForm = () => {
         description: "Nossa equipe entrará em contato em breve.",
       });
       setName("");
+      setEmail("");
       setPhone("");
       setMonthlyBudget("");
     }, 1500);
