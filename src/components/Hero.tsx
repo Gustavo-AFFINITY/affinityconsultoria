@@ -39,7 +39,7 @@ const Hero = () => {
           <ScrollReveal delay={0.15}>
             <p className="text-silver text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
               Existe uma estratégia inteligente para conquistar o carro dos seus sonhos
-              sem financiamento bancário, sem juros abusivos e sem entrada absurda.
+              sem financiamento bancário e sem juros.
             </p>
           </ScrollReveal>
 
