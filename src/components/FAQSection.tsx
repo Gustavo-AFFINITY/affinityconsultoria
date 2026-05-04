@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Funciona para qualquer tipo de veículo?",
-    a: "Sim. A estratégia pode ser aplicada para carros populares, SUVs, picapes, veículos de luxo e até motos. Tudo depende do seu objetivo e orçamento.",
+    a: "Sim. A estratégia pode ser aplicada para carros novos seminovos, populares, SUVs, picapes, veículos de luxo e caminhões. ",
   },
   {
     q: "Como é feito o diagnóstico gratuito?",
