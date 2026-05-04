@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Em quanto tempo consigo comprar o carro?",
-    a: "O prazo varia conforme a estratégia traçada para o seu perfil. Existem caminhos que podem levar à aquisição em poucos meses, enquanto outros planos se estendem até 84 meses. Tudo é definido no seu planejamento personalizado.",
+    a: "O prazo varia conforme a estratégia traçada para o seu perfil. Existem caminhos que podem levar à aquisição em poucos meses, enquanto outros planos se estendem um pouco mais. Tudo é definido no seu planejamento personalizado.",
   },
   {
     q: "Isso é seguro? É regulamentado?",
