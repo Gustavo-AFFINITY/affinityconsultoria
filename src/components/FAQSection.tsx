@@ -32,8 +32,8 @@ const faqs = [
     a: "Sim. A estratégia pode ser aplicada para carros novos seminovos, populares, SUVs, picapes, veículos de luxo e caminhões. ",
   },
   {
-    q: "Como é feito o diagnóstico gratuito?",
-    a: "O diagnóstico é uma conversa de aproximadamente 30 minutos, presencial ou online, onde analisamos sua situação financeira atual, entendemos o veículo que você deseja e apresentamos as possibilidades da estratégia para o seu perfil. Sem compromisso e sem custo.",
+    q: "Como é feito o diagnóstico?",
+    a: "O diagnóstico é uma conversa online, onde analisamos sua situação financeira atual, entendemos o perfil do veículo que você deseja comprar e apresentamos as opções da melhor estratégia. ",
   },
 ];
 
