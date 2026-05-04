@@ -88,6 +88,21 @@ const LeadForm = () => {
             </div>
 
             <div>
+              <label htmlFor="email" className="block text-navy-foreground font-display font-semibold text-sm mb-2">
+                E-mail
+              </label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="seu@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={255}
+                className="bg-navy-foreground/10 border-silver/30 text-navy-foreground placeholder:text-silver/50 focus-visible:ring-primary"
+              />
+            </div>
+
+            <div>
               <label htmlFor="phone" className="block text-navy-foreground font-display font-semibold text-sm mb-2">
                 Telefone com DDD
               </label>
