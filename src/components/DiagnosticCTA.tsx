@@ -9,7 +9,7 @@ const scrollToForm = () => {
 const benefits = [
   "Análise do seu perfil financeiro atual",
   "Compra sem juros e de forma programada",
-  "Entrada no plano de forma inteligente e planejada",
+  "Suporte em todas as etapas da sua conquista",
   "",
 ];
 
