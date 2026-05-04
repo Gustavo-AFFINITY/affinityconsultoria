@@ -22,9 +22,7 @@ const FinalCTA = () => (
     <div className="container mx-auto px-4 text-center relative z-10">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground mb-4">
-          O carro que você sempre quis
           <br />
-          está mais perto do que imagina.
         </h2>
       </ScrollReveal>
       <ScrollReveal delay={0.15}>
@@ -34,7 +32,7 @@ const FinalCTA = () => (
           whileTap={{ scale: 0.97 }}
           className="relative inline-block bg-primary text-primary-foreground font-display font-bold text-lg tracking-wider px-12 py-5 rounded-md transition-colors duration-300 hover:bg-navy mt-8 animate-pulse-glow overflow-hidden group"
         >
-          <span className="relative z-10">QUERO CONQUISTAR MEU CARRO</span>
+          <span className="relative z-10"></span>
           <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
         </motion.button>
       </ScrollReveal>
