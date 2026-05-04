@@ -8,9 +8,9 @@ const scrollToForm = () => {
 
 const benefits = [
   "Análise do seu perfil financeiro atual",
-  "Simulação de estratégia de aquisição personalizada para o veículo desejado",
+  "Compra sem juros e de forma programada",
   "Comparativo real: financiamento bancário vs. nossa estratégia",
-  "Sem compromisso. Sem pressão. 100% gratuito.",
+  "",
 ];
 
 const DiagnosticCTA = () => (
@@ -18,13 +18,13 @@ const DiagnosticCTA = () => (
     <div className="container mx-auto px-4 text-center relative z-10">
       <ScrollReveal>
         <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground mb-12">
-          Diagnóstico Gratuito  Descubra Quanto Você Pode Economizar
+          Diagnóstico Gratuito:  Descubra quanto você pode economizar
         </h2>
       </ScrollReveal>
 
       <ScrollReveal delay={0.1}>
         <div className="max-w-xl mx-auto mb-10">
-          {benefits.map((b, i) => (
+          {benefits.filter(b => b !== "").map((b, i) => (
             <div key={i} className="flex items-center gap-3 mb-4 text-left">
               <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                 <Check className="w-3 h-3 text-primary" strokeWidth={3} />

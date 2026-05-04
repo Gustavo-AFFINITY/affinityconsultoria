@@ -4,7 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 
 const cards = [
   { icon: Car, label: "O seu carro na garagem com planejamento e sem surpresas" },
-  { icon: CalendarDays, label: "Parcelas que cabem no seu bolso, de 12 a 84 meses" },
+  { icon: CalendarDays, label: "Sem juros. Sem entrada. Só planejamento" },
   { icon: BadgeDollarSign, label: "Sem juros. Sem entrada absurda. Sem banco no meio." },
 ];
 
