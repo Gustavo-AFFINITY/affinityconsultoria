@@ -1,24 +1,59 @@
-Entendi. A mensagem de bloqueio provavelmente continua porque Instagram/WhatsApp ainda estão tentando abrir dentro do ambiente de preview do Lovable ou estão sendo tratados como pop-up. A alternativa mais segura é não depender de `window.open()` no clique e sim trocar o comportamento para navegação direta do navegador.
+## Análise das imagens
 
-Plano de correção:
+Você enviou 4 imagens — todas têm o mesmo estilo: estúdio cinza/minimalista, iluminação top, piso de concreto polido, com carros enfileirados de frente. A consistência visual entre elas é ótima e combina perfeitamente com a paleta navy + silver + dourado da landing page.
 
-1. Ajustar os botões do rodapé
-   - Remover o `onClick` com `window.open()` dos links sociais.
-   - Usar links HTML normais, com `target="_top"`, para forçar a abertura fora do iframe/preview atual.
-   - Manter `rel="noopener noreferrer"`.
+| # | Conteúdo | Vibe |
+|---|---|---|
+| 1 | 3 SUVs (Haval, Chery, Toyota) | Premium / família |
+| 2 | 3 Picapes (Chevrolet, Hilux, Ford) | Robusto / trabalho |
+| 3 | 5 Hatch/compactos (HB20, Onix, BYD, Strada, T-Cross) | Popular / primeiro carro |
+| 4 | 4 SUVs/crossovers (BYD, Hyundai, VW, Jeep) | Variedade / upgrade |
 
-2. Usar URLs mais compatíveis
-   - Instagram: `https://www.instagram.com/affinitycor/`
-   - WhatsApp: `https://wa.me/5534991097072` ou `https://api.whatsapp.com/send?phone=5534991097072`
-   - Se necessário, usar a versão `https://l.instagram.com/?u=...` não será a primeira opção, porque pode parecer menos confiável para o usuário.
+Cada imagem casa naturalmente com um perfil ou momento da jornada na LP.
 
-3. Adicionar alternativa visível no rodapé
-   - Para evitar dependência total de links externos no preview, deixar também o texto do Instagram `@affinitycor` e o telefone `(34) 99109-7072` visíveis e copiáveis.
-   - Assim, mesmo se o ambiente de teste bloquear o Instagram, o visitante consegue identificar o contato.
+## Proposta de distribuição
 
-4. Teste após a alteração
-   - Verificar se os botões continuam clicáveis.
-   - Confirmar que o clique tenta sair do preview atual em vez de carregar Instagram/WhatsApp dentro da moldura do Lovable.
+```text
+HERO ────────────── Imagem 1 (SUVs premium) — substitui hero-image.jpg
+ConnectionSection ─ (sem imagem, mantém cards)
+HowItWorks ──────── (mantém o dark-car-bg atual de fundo)
+[NOVO] Galeria ──── Faixa marquee horizontal com as 4 imagens
+ForWhoSection ───── 3 cards com mini-imagens no topo:
+                    • "Primeiro carro" → Imagem 3 (compactos)
+                    • "Trocar de carro" → Imagem 4 (crossovers)
+                    • "Economizar" → Imagem 2 (picapes)
+AboutSection ────── (sem mudança)
+DiagnosticCTA ───── (sem mudança)
+FAQ + Form ──────── (sem mudança)
+```
 
-Observação importante:
-Esse bloqueio é típico do Instagram, não do site em si. O Instagram impede ser aberto dentro de iframes por segurança. Em produção, fora do preview do Lovable, o link tende a funcionar normalmente. A alteração proposta força a navegação para fora da moldura do preview, que é a forma mais compatível para esse caso.
+### 1. Hero — Imagem 1 como background
+- Substituir `src/assets/hero-image.jpg` pela Imagem 1 (SUVs premium escuros).
+- Manter o gradiente `from-navy via-navy/95 to-navy/60 opacity-50` que já existe — a imagem tem fundo claro e os carros escuros vão criar bom contraste com o texto à esquerda.
+- Efeito Ken Burns / parallax já existente é mantido.
+
+### 2. Nova seção "Galeria" (entre HowItWorks e ForWhoSection)
+- Faixa de imagens em estilo **marquee horizontal infinito** (animação `marquee` já existe no `tailwind.config.ts`).
+- Altura fixa ~280px, imagens em cards com `rounded-lg`, leve sombra, hover com scale.
+- Título curto acima: "Veículos que nossos clientes já conquistaram".
+- Fundo `bg-background` com transição suave do navy.
+- Mostra todas as 4 imagens (loop), reforça prova social.
+
+### 3. ForWhoSection — adicionar imagem no topo de cada card
+- Acima de cada ícone, uma faixa de imagem `h-40 object-cover rounded-t-lg` (com o card perdendo o `rounded-lg` puro e ganhando overflow-hidden).
+- Mapeamento conforme tabela acima.
+- Mantém ícone + título + descrição inalterados abaixo da imagem.
+- Hover atual (lift + 3D tilt) preservado.
+
+## Detalhes técnicos
+
+**Arquivos a alterar:**
+- `src/assets/hero-image.jpg` — substituído pela Imagem 1 (copiar de `user-uploads://Gemini_Generated_Image_pxis97pxis97pxis.png`).
+- `src/assets/cars-suvs.jpg`, `cars-pickups.jpg`, `cars-compact.jpg`, `cars-crossovers.jpg` — copiar as 4 imagens para a pasta de assets.
+- `src/components/ForWhoSection.tsx` — adicionar `image` no array `profiles`, renderizar `<img>` no topo do card, ajustar padding/overflow.
+- `src/components/GallerySection.tsx` (novo) — marquee com as 4 imagens, usando `animate-marquee` já existente.
+- `src/pages/Index.tsx` — importar e inserir `<GallerySection />` entre `<HowItWorks />` e `<ForWhoSection />`.
+
+**Estilo visual:** mantém o existing pattern — `ScrollReveal` para entrada, `motion.div` com hover, bordas `border-primary/20`, `rounded-lg`, fundo alternando navy/background entre seções para ritmo.
+
+Confirma essa distribuição que eu já implemento?
