@@ -1,14 +1,16 @@
 import ScrollReveal from "./ScrollReveal";
-import suvs from "@/assets/cars-suvs.jpg";
-import pickups from "@/assets/cars-pickups.jpg";
-import compact from "@/assets/cars-compact.jpg";
-import crossovers from "@/assets/cars-crossovers.jpg";
+import ram from "@/assets/client-ram.jpg";
+import s10 from "@/assets/client-s10.jpg";
+import trive from "@/assets/client-trive.jpg";
+import chery from "@/assets/client-chery.jpg";
+import corolla from "@/assets/client-corolla.jpg";
 
 const images = [
-  { src: suvs, alt: "SUVs conquistados pelos clientes AFFINITY" },
-  { src: pickups, alt: "Picapes conquistadas pelos clientes AFFINITY" },
-  { src: crossovers, alt: "Crossovers conquistados pelos clientes AFFINITY" },
-  { src: compact, alt: "Carros compactos conquistados pelos clientes AFFINITY" },
+  { src: ram, alt: "Cliente AFFINITY conquistou a picape RAM Rampage" },
+  { src: chery, alt: "Cliente AFFINITY conquistou um SUV Chery" },
+  { src: corolla, alt: "Cliente AFFINITY conquistou o Toyota Corolla Cross" },
+  { src: s10, alt: "Cliente AFFINITY conquistou a picape Chevrolet S10" },
+  { src: trive, alt: "Entrega técnica de veículo conquistado por cliente AFFINITY" },
 ];
 
 const GallerySection = () => (
@@ -31,7 +33,7 @@ const GallerySection = () => (
         {[...images, ...images].map((img, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-[420px] md:w-[560px] h-[260px] md:h-[320px] rounded-lg overflow-hidden border border-primary/10 shadow-xl shadow-primary/5 group"
+            className="flex-shrink-0 w-[320px] md:w-[400px] h-[420px] md:h-[500px] rounded-lg overflow-hidden border border-primary/10 shadow-xl shadow-primary/5 group"
           >
             <img
               src={img.src}
