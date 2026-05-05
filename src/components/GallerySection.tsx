@@ -23,7 +23,7 @@ const GallerySection = () => (
       </ScrollReveal>
       <ScrollReveal delay={0.1}>
         <p className="text-foreground/70 text-center text-lg max-w-2xl mx-auto">
-          De compactos a SUVs e picapes — qualquer carro pode ser conquistado com a estratégia certa.
+          De compactos a SUVs e picapes, qualquer carro pode ser conquistado com a estratégia certa.
         </p>
       </ScrollReveal>
     </div>
