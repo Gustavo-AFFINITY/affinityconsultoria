@@ -23,7 +23,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
           style={{ opacity }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/60 opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/60 opacity-30" />
       </motion.div>
 
       <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
