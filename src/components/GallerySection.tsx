@@ -6,10 +6,10 @@ import chery from "@/assets/client-chery.jpg";
 import corolla from "@/assets/client-corolla.jpg";
 
 const images = [
-  { src: chery, alt: "Cliente AFFINITY conquistou um SUV Chery" },
-  { src: s10, alt: "Cliente AFFINITY conquistou a picape Chevrolet S10" },
-  { src: ram, alt: "Cliente AFFINITY conquistou a picape RAM Rampage" },
   { src: trive, alt: "Entrega técnica de veículo conquistado por cliente AFFINITY" },
+  { src: chery, alt: "Cliente AFFINITY conquistou um SUV Chery" },
+  { src: ram, alt: "Cliente AFFINITY conquistou a picape RAM Rampage" },
+  { src: s10, alt: "Cliente AFFINITY conquistou a picape Chevrolet S10" },
   { src: corolla, alt: "Cliente AFFINITY conquistou o Toyota Corolla Cross" },
 ];
 
