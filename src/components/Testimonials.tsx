@@ -3,10 +3,10 @@ import ScrollReveal from "./ScrollReveal";
 
 const testimonials = [
   {
-    name: "Carlos Mendes",
+    name: "Heber Borges",
     city: "Uberlândia, MG",
-    result: "Conquistou um SUV de R$ 120.000 sem pagar juros",
-    quote: "Nunca imaginei que existia uma forma de comprar carro sem financiamento. O método da AFFINITYMASTER me economizou mais de R$ 30 mil em juros.",
+    result: "Conquistou a primeira caminhonete zero quilômetro ",
+    quote: "Estou muito satisfeito com a aquisição. Quero agradecer ao pessoal da AFFINITY por ter me acompanhado, me orientado e me dado a condição de chegar onde cheguei. Sem ele, talvez eu não teria feito esse negócio.",
   },
   {
     name: "Renata Oliveira",
