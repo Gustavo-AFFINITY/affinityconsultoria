@@ -9,10 +9,10 @@ const testimonials = [
     quote: "Estou muito satisfeito com a aquisição. Quero agradecer ao pessoal da AFFINITY por ter me acompanhado, me orientado e me dado a condição de chegar onde cheguei. Sem ele, talvez eu não teria feito esse negócio.",
   },
   {
-    name: "Renata Oliveira",
+    name: "Ismália Queiroz",
     city: "Uberlândia, MG",
-    result: "Comprou o carro zero em 18 meses",
-    quote: "Estava quase fechando um financiamento bancário quando descobri essa estratégia. Hoje tenho meu carro zero e paguei muito menos por ele.",
+    result: "Comprou o terceiro carro usando a nossa estratégia",
+    quote: "Foi uma experiência muito bacana e um processo super rápido. A experiência com a AFFINITY  foi muito legal, a assistência e a consultoria foi muito completa.",
   },
   {
     name: "Fernando e Ana Costa",
