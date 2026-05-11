@@ -15,10 +15,10 @@ const testimonials = [
     quote: "Foi uma experiência muito bacana e um processo super rápido. A experiência com a AFFINITY  foi muito legal, a assistência e a consultoria foi muito completa.",
   },
   {
-    name: "Fernando e Ana Costa",
+    name: "Keice Nunes",
     city: "Uberlândia, MG",
-    result: "Dois veículos adquiridos com a estratégia",
-    quote: "Compramos o primeiro carro e, quando vimos o resultado, já partimos para o segundo. Nunca mais vamos voltar para financiamento bancário.",
+    result: "Alcançou o carro novo através da nossa consultoria",
+    quote: "Hoje é um dia muito especial. Através da consultoria da AFFINITY e da estratégia utilizada, eu alcancei a vitória do meu carro novo.",
   },
 ];
 
