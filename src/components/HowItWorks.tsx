@@ -1,7 +1,6 @@
 import { Search, Target, PlayCircle, Car } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
-import carBg from "@/assets/dark-car-bg.jpg";
 
 const steps = [
   { icon: Search, title: "Diagnóstico gratuito", desc: "Analisamos sua situação financeira e o veículo que deseja" },
@@ -12,8 +11,7 @@ const steps = [
 
 const HowItWorks = () => (
   <section
-    className="py-20 md:py-28 bg-navy car-bg-section relative"
-    style={{ ["--car-bg-image" as string]: `url(${carBg})` }}
+    className="py-20 md:py-28 bg-navy relative"
   >
     <div className="container mx-auto px-4 relative">
       <ScrollReveal>
@@ -30,16 +28,6 @@ const HowItWorks = () => (
       </ScrollReveal>
 
       <div className="max-w-4xl mx-auto relative">
-        {/* Animated vertical line */}
-        <motion.div
-          initial={{ scaleY: 0 }}
-          whileInView={{ scaleY: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-          style={{ transformOrigin: "top" }}
-          className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-primary/40 to-transparent hidden sm:block text-center"
-        />
-
         {steps.map((step, i) => (
           <ScrollReveal key={i} delay={0.1 * i}>
             <div className="flex gap-5 mb-10 last:mb-0 items-start group">
