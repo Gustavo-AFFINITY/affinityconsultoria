@@ -34,7 +34,7 @@ const AboutSection = () => (
               Consultoria especializada em aquisição automotiva inteligente
             </h2>
             <p className="text-foreground/80 text-lg leading-relaxed mb-4">
-              A AFFINITYMASTER é uma consultoria com atuação em Uberlândia/MG e região,
+              A AFFINITYMASTER é uma consultoria sediada em Uberlândia com atuação regional e nacional,
               especializada em estratégias inteligentes para aquisição de veículos.
             </p>
             <p className="text-foreground/80 text-lg leading-relaxed mb-4">
