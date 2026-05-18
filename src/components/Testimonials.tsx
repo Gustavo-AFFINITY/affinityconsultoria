@@ -4,9 +4,9 @@ import ScrollReveal from "./ScrollReveal";
 const testimonials = [
   {
     name: "Heber Borges",
-    city: "Uberlândia, MG",
+    city: "Campina Verde, MG",
     result: "Conquistou a primeira caminhonete zero quilômetro ",
-    quote: "Estou muito satisfeito com a aquisição. Quero agradecer ao pessoal da AFFINITY por ter me acompanhado, me orientado e me dado a condição de chegar onde cheguei. Sem ele, talvez eu não teria feito esse negócio.",
+    quote: "Estou muito satisfeito com a aquisição. Quero agradecer ao pessoal da AFFINITY por ter me acompanhado, me orientado e me dado a condição de chegar onde cheguei. Sem eles, talvez eu não teria feito esse negócio.",
   },
   {
     name: "Ismália Queiroz",
