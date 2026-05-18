@@ -23,7 +23,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
           style={{ opacity }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/60 opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/60 opacity-0" />
       </motion.div>
 
       <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
@@ -37,7 +37,7 @@ const Hero = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <p className="text-silver text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+            <p className="text-silver text-lg md:text-xl leading-relaxed mb-10 max-w-2xl text-white">
               Existe uma estratégia inteligente para conquistar o carro dos seus sonhos
               sem financiamento bancário e sem juros.
             </p>
@@ -56,8 +56,8 @@ const Hero = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <p className="text-silver/60 text-sm mt-8 font-body">
-              Mais de 200 pessoas de Uberlândia já conquistaram o carro com essa estratégia
+            <p className="text-silver/60 text-sm mt-8 font-body text-white">
+              Centenas de pessoas já conquistaram o carro com essa estratégia
             </p>
           </ScrollReveal>
         </div>
