@@ -23,7 +23,7 @@ const Counter = ({ to, suffix = "" }: { to: number; suffix?: string }) => {
 
 const stats = [
   { number: 500, suffix: "+", label: "Clientes atendidos" },
-  { number: 21, suffix: "", label: "" },
+  { number: 21, suffix: "", label: "Anos de atuação" },
 ];
 
 const AboutSection = () => (
