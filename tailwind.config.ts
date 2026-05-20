@@ -110,7 +110,7 @@ export default {
         "pulse-glow": "pulse-glow 2.4s ease-in-out infinite",
         shimmer: "shimmer 2.8s ease-in-out infinite",
         "ken-burns": "ken-burns 18s ease-in-out infinite alternate",
-        marquee: "marquee 40s linear infinite",
+        marquee: "marquee 25s linear infinite",
       },
     },
   },
