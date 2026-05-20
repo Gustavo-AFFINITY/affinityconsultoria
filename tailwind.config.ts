@@ -111,6 +111,7 @@ export default {
         shimmer: "shimmer 2.8s ease-in-out infinite",
         "ken-burns": "ken-burns 18s ease-in-out infinite alternate",
         marquee: "marquee 25s linear infinite",
+        "marquee-fast": "marquee 12s linear infinite",
       },
     },
   },
