@@ -32,7 +32,7 @@ const Hero = () => {
             <h1 className="font-display font-bold md:text-5xl lg:text-6xl text-navy-foreground leading-tight px-0 py-0 text-left text-5xl mx-0 mb-0 ml-0 mr-[150px]">
               Seu carro novo está mais perto
               <br />
-              <span className="text-primary">do que você imagina.</span>
+              <span className="text-primary mr-[10px]">do que você imagina.</span>
             </h1>
           </ScrollReveal>
 
