@@ -37,7 +37,7 @@ const Hero = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <p className="text-silver text-lg md:text-xl leading-relaxed mb-10 max-w-2xl text-white">
+            <p className="text-silver text-lg md:text-xl leading-relaxed mb-10 max-w-2xl text-neutral-300">
               Existe uma estratégia inteligente para conquistar o carro dos seus sonhos
               sem financiamento bancário e sem juros.
             </p>
@@ -48,7 +48,7 @@ const Hero = () => {
               onClick={scrollToForm}
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="relative inline-block bg-primary text-primary-foreground font-display font-bold text-base md:text-lg tracking-wider px-10 py-4 rounded-md transition-colors duration-300 hover:bg-primary-deep animate-pulse-glow overflow-hidden group"
+              className="relative inline-block bg-primary text-primary-foreground font-display font-bold text-base md:text-lg tracking-wider px-10 py-4 transition-colors duration-300 hover:bg-primary-deep animate-pulse-glow overflow-hidden group rounded-sm"
             >
               <span className="relative z-10">QUERO ENTENDER COMO FUNCIONA</span>
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
@@ -56,7 +56,7 @@ const Hero = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <p className="text-silver/60 text-sm mt-8 font-body text-white">
+            <p className="text-silver/60 text-sm mt-8 font-body text-neutral-500">
               Centenas de pessoas já conquistaram o carro com essa estratégia
             </p>
           </ScrollReveal>
