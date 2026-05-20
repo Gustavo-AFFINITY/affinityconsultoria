@@ -37,7 +37,7 @@ const Hero = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <p className="text-silver text-lg md:text-xl leading-relaxed mb-10 max-w-2xl text-neutral-300">
+            <p className="text-silver text-lg md:text-xl leading-relaxed mb-10 max-w-2xl text-neutral-300 mr-[200px]">
               Existe uma estratégia inteligente para conquistar o carro dos seus sonhos
               sem financiamento bancário e sem juros.
             </p>
