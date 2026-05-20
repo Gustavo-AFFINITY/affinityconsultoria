@@ -6,7 +6,10 @@ const Counter = ({ to, suffix = "" }: { to: number; suffix?: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.floor(v).toString() + suffix);
+  const rounded = useTransform(count, (v) => {
+    const value = Math.floor(v).toString();
+    return suffix === "+" ? suffix + value : value + suffix;
+  });
 
   useEffect(() => {
     if (inView) {
