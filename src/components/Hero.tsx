@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
         <div className="max-w-3xl">
           <ScrollReveal>
-            <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-navy-foreground leading-tight mb-6">
+            <h1 className="font-display font-bold md:text-5xl lg:text-6xl text-navy-foreground leading-tight px-0 py-0 text-left text-5xl mx-0 mb-0 ml-0 mr-[150px]">
               Seu carro novo está mais perto
               <br />
               <span className="text-primary">do que você imagina.</span>
