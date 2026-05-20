@@ -28,12 +28,12 @@ const GallerySection = () => (
       </ScrollReveal>
     </div>
 
-    <div className="relative w-full">
-      <div className="flex gap-6 animate-marquee">
+    <div className="relative w-full overflow-hidden">
+      <div className="flex w-max animate-marquee-fast md:animate-marquee">
         {[...images, ...images].map((img, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-[320px] md:w-[400px] h-[420px] md:h-[500px] rounded-lg overflow-hidden border border-primary/10 shadow-xl shadow-primary/5 group"
+            className="flex-shrink-0 w-[320px] md:w-[400px] h-[420px] md:h-[500px] mr-6 rounded-lg overflow-hidden border border-primary/10 shadow-xl shadow-primary/5 group"
           >
             <img
               src={img.src}
