@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
         <div className="max-w-3xl">
           <ScrollReveal>
-            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-navy-foreground leading-tight px-0 py-0 text-left mx-0 mb-0 ml-0 mr-0 md:mr-[150px]">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-navy-foreground leading-tight px-0 py-0 text-left mx-0 ml-0 mr-0 md:mr-[150px] mb-[10px]">
               Seu carro novo está mais perto
               <br />
               <span className="text-primary md:mr-[10px]">do que você imagina.</span>
@@ -37,7 +37,7 @@ const Hero = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <p className="text-silver text-base sm:text-lg md:text-xl leading-relaxed mt-4 mb-8 md:mb-10 max-w-2xl text-neutral-300 mr-0 md:mr-[200px]">
+            <p className="text-silver text-base sm:text-lg md:text-xl leading-relaxed mt-4 mb-8 md:mb-10 max-w-2xl text-neutral-300 md:mr-[200px] ml-0 pl-0 pr-0 text-left mr-[140px]">
               Existe uma estratégia inteligente para conquistar o carro dos seus sonhos
               sem financiamento bancário e sem juros.
             </p>
