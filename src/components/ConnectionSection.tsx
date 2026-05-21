@@ -5,7 +5,7 @@ import ScrollReveal from "./ScrollReveal";
 const cards = [
   { icon: Car, label: "O seu carro na garagem com planejamento e sem surpresas" },
   { icon: CalendarDays, label: "Sem juros. Sem entrada. Só planejamento" },
-  { icon: BadgeDollarSign, label: "Sem juros. Sem entrada absurda. Sem banco no meio." },
+  { icon: BadgeDollarSign, label: "O seu carro na garagem da maneira mais econômica" },
 ];
 
 const ConnectionSection = () => (
