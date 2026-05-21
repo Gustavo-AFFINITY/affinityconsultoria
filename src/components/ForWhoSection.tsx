@@ -21,7 +21,7 @@ const profiles = [
   {
     icon: TrendingUp,
     image: pickupsImg,
-    title: "Quer economizar de verdade",
+    title: "Quer economia de verdade",
     desc: "Você sabe que financiamento é caro e quer uma alternativa inteligente. ",
   },
 ];
@@ -60,7 +60,7 @@ const ForWhoSection = () => (
                 >
                   <p.icon className="w-6 h-6 text-primary" />
                 </motion.div>
-                <h3 className="font-display font-bold text-lg text-foreground mb-3">{p.title}</h3>
+                <h3 className="font-display font-bold text-lg text-foreground pr-0 pb-0 pl-0 mb-[12px] ml-0 -mr-[10px]">{p.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
             </motion.div>
