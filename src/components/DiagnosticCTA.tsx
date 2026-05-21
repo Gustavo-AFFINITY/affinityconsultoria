@@ -42,7 +42,7 @@ const DiagnosticCTA = () => (
           whileTap={{ scale: 0.97 }}
           className="relative inline-block bg-primary text-primary-foreground font-display font-bold text-lg tracking-wider px-12 py-5 rounded-md transition-colors duration-300 hover:bg-primary-deep animate-pulse-glow overflow-hidden group"
         >
-          <span className="relative z-10">QUERO MEU DIAGNÓSTICO GRATUITO</span>
+          <span className="relative z-10">QUERO COMPRAR MEU CARRO</span>
           <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
         </motion.button>
         <p className="text-silver/50 text-sm mt-4">
