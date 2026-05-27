@@ -15,8 +15,8 @@ const HowItWorks = () => (
   >
     <div className="container mx-auto px-4 relative">
       <ScrollReveal>
-        <h2 className="font-display font-bold text-3xl md:text-4xl text-navy-foreground text-center mb-4">
-          Uma estratégia que os bancos não querem que você conheça
+        <h2 className="font-display font-bold md:text-4xl text-navy-foreground text-center px-0 pr-0 mb-[16px] mr-[160px] ml-[160px] text-4xl">
+          Quem conhece essa estratégia nunca mais financia um carro
         </h2>
       </ScrollReveal>
       <ScrollReveal delay={0.1}>
