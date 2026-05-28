@@ -1,1 +1,4 @@
 project_id = "eomwbtvmbdiobeidtgod"
+
+[functions.notify-new-lead]
+verify_jwt = false
