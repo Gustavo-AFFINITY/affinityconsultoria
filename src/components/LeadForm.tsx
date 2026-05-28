@@ -19,8 +19,9 @@ const LeadForm = () => {
     return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
 
     const phoneDigits = phone.replace(/\D/g, "");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
