@@ -43,9 +43,33 @@ const LeadForm = () => {
 
     setLoading(true);
 
-    // Simulate submission
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const { data: inserted, error } = await supabase
+        .from("leads")
+        .insert({
+          nome: name.trim(),
+          email: email.trim(),
+          telefone: phone,
+          valor_pretendido: monthlyBudget,
+        })
+        .select("id")
+        .single();
+
+      if (error) throw error;
+
+      // Fire and forget notification (don't block the user)
+      supabase.functions
+        .invoke("notify-new-lead", {
+          body: {
+            leadId: inserted.id,
+            nome: name.trim(),
+            email: email.trim(),
+            telefone: phone,
+            valor_pretendido: monthlyBudget,
+          },
+        })
+        .catch(() => {});
+
       toast({
         title: "Dados enviados com sucesso!",
         description: "Nossa equipe entrará em contato em breve.",
@@ -54,7 +78,16 @@ const LeadForm = () => {
       setEmail("");
       setPhone("");
       setMonthlyBudget("");
-    }, 1500);
+    } catch (err: any) {
+      toast({
+        title: "Não foi possível enviar",
+        description: err.message ?? "Tente novamente em instantes.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+
   };
 
   return (
