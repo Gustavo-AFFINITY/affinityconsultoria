@@ -1,59 +1,64 @@
-## Análise das imagens
 
-Você enviou 4 imagens — todas têm o mesmo estilo: estúdio cinza/minimalista, iluminação top, piso de concreto polido, com carros enfileirados de frente. A consistência visual entre elas é ótima e combina perfeitamente com a paleta navy + silver + dourado da landing page.
+## Objetivo
 
-| # | Conteúdo | Vibe |
-|---|---|---|
-| 1 | 3 SUVs (Haval, Chery, Toyota) | Premium / família |
-| 2 | 3 Picapes (Chevrolet, Hilux, Ford) | Robusto / trabalho |
-| 3 | 5 Hatch/compactos (HB20, Onix, BYD, Strada, T-Cross) | Popular / primeiro carro |
-| 4 | 4 SUVs/crossovers (BYD, Hyundai, VW, Jeep) | Variedade / upgrade |
+Hoje o formulário de captação simula o envio com `setTimeout` e descarta os dados. Vamos:
 
-Cada imagem casa naturalmente com um perfil ou momento da jornada na LP.
+1. Salvar cada lead em um banco de dados real (Lovable Cloud).
+2. Enviar um e-mail automático para **gustavo@affinitycor.com.br** sempre que alguém preencher.
+3. Criar uma página `/admin` protegida por login onde você vê todos os leads e pode exportá-los.
 
-## Proposta de distribuição
+---
 
-```text
-HERO ────────────── Imagem 1 (SUVs premium) — substitui hero-image.jpg
-ConnectionSection ─ (sem imagem, mantém cards)
-HowItWorks ──────── (mantém o dark-car-bg atual de fundo)
-[NOVO] Galeria ──── Faixa marquee horizontal com as 4 imagens
-ForWhoSection ───── 3 cards com mini-imagens no topo:
-                    • "Primeiro carro" → Imagem 3 (compactos)
-                    • "Trocar de carro" → Imagem 4 (crossovers)
-                    • "Economizar" → Imagem 2 (picapes)
-AboutSection ────── (sem mudança)
-DiagnosticCTA ───── (sem mudança)
-FAQ + Form ──────── (sem mudança)
-```
+## Etapas
 
-### 1. Hero — Imagem 1 como background
-- Substituir `src/assets/hero-image.jpg` pela Imagem 1 (SUVs premium escuros).
-- Manter o gradiente `from-navy via-navy/95 to-navy/60 opacity-50` que já existe — a imagem tem fundo claro e os carros escuros vão criar bom contraste com o texto à esquerda.
-- Efeito Ken Burns / parallax já existente é mantido.
+### 1. Ativar Lovable Cloud
+Ativa o backend integrado (banco de dados, autenticação e funções), sem necessidade de conta externa.
 
-### 2. Nova seção "Galeria" (entre HowItWorks e ForWhoSection)
-- Faixa de imagens em estilo **marquee horizontal infinito** (animação `marquee` já existe no `tailwind.config.ts`).
-- Altura fixa ~280px, imagens em cards com `rounded-lg`, leve sombra, hover com scale.
-- Título curto acima: "Veículos que nossos clientes já conquistaram".
-- Fundo `bg-background` com transição suave do navy.
-- Mostra todas as 4 imagens (loop), reforça prova social.
+### 2. Criar a tabela `leads`
+Campos: `id`, `nome`, `email`, `telefone`, `valor_pretendido`, `created_at`.
+Com regras de segurança (RLS) que permitem:
+- Qualquer visitante **inserir** um lead pelo formulário.
+- Apenas usuários autenticados (você) **ler** os leads.
 
-### 3. ForWhoSection — adicionar imagem no topo de cada card
-- Acima de cada ícone, uma faixa de imagem `h-40 object-cover rounded-t-lg` (com o card perdendo o `rounded-lg` puro e ganhando overflow-hidden).
-- Mapeamento conforme tabela acima.
-- Mantém ícone + título + descrição inalterados abaixo da imagem.
-- Hover atual (lift + 3D tilt) preservado.
+### 3. Ajustar o `LeadForm.tsx`
+Substituir o `setTimeout` por uma gravação real no banco. Manter as validações e o toast de sucesso já existentes.
+
+### 4. Configurar e-mail de notificação
+- Configurar um domínio remetente do Lovable Emails (você precisará apontar registros DNS uma única vez — vou te guiar pelo diálogo).
+- Criar uma função que dispara um e-mail para `gustavo@affinitycor.com.br` a cada novo lead, contendo nome, e-mail, telefone e valor pretendido, com botões para responder por e-mail ou abrir o WhatsApp.
+
+### 5. Sistema de login
+- Criar páginas `/login` e `/admin`.
+- Login por e-mail + senha (Lovable Auth).
+- Apenas você se cadastra (primeiro acesso cria sua conta).
+
+### 6. Painel `/admin`
+Lista de leads com:
+- Tabela ordenada por data (mais recentes primeiro).
+- Busca por nome/telefone.
+- Botão "Exportar CSV".
+- Link direto de WhatsApp para cada lead.
+- Botão de sair (logout).
+
+### 7. Rota protegida
+Se alguém não autenticado tentar abrir `/admin`, é redirecionado para `/login`.
+
+---
 
 ## Detalhes técnicos
 
-**Arquivos a alterar:**
-- `src/assets/hero-image.jpg` — substituído pela Imagem 1 (copiar de `user-uploads://Gemini_Generated_Image_pxis97pxis97pxis.png`).
-- `src/assets/cars-suvs.jpg`, `cars-pickups.jpg`, `cars-compact.jpg`, `cars-crossovers.jpg` — copiar as 4 imagens para a pasta de assets.
-- `src/components/ForWhoSection.tsx` — adicionar `image` no array `profiles`, renderizar `<img>` no topo do card, ajustar padding/overflow.
-- `src/components/GallerySection.tsx` (novo) — marquee com as 4 imagens, usando `animate-marquee` já existente.
-- `src/pages/Index.tsx` — importar e inserir `<GallerySection />` entre `<HowItWorks />` e `<ForWhoSection />`.
+- **Stack**: Supabase via Lovable Cloud (Postgres + Auth + Edge Functions).
+- **Tabela**: `public.leads` com RLS — política `INSERT` para `anon`, política `SELECT` para `authenticated`.
+- **E-mail**: Lovable Emails + edge function `send-transactional-email` chamada após o `insert` do lead, com `idempotencyKey` baseado no `lead.id` para evitar duplicatas.
+- **Auth**: e-mail/senha, sem confirmação por e-mail (para você cadastrar rápido). Sem cadastro público — a tela `/login` mostra apenas "entrar"; o primeiro acesso pode ser via signup oculto ou via console do Cloud.
+- **Frontend**: novas rotas em `src/App.tsx`, páginas `src/pages/Login.tsx` e `src/pages/Admin.tsx`, hook de auth com `onAuthStateChange`.
 
-**Estilo visual:** mantém o existing pattern — `ScrollReveal` para entrada, `motion.div` com hover, bordas `border-primary/20`, `rounded-lg`, fundo alternando navy/background entre seções para ritmo.
+---
 
-Confirma essa distribuição que eu já implemento?
+## O que você precisará fazer
+
+1. Aprovar este plano.
+2. Quando o diálogo de domínio de e-mail aparecer, escolher um subdomínio (ex.: `notify.affinitycor.com.br`) e configurar os 2 registros DNS no seu provedor — eu mostro os valores exatos.
+3. Criar sua conta no `/login` no primeiro acesso.
+
+Tudo o resto é automático.
