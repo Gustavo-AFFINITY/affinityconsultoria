@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import ScrollReveal from "./ScrollReveal";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+
 
 const LeadForm = () => {
   const [name, setName] = useState("");
