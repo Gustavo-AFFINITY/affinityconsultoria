@@ -16,11 +16,12 @@ async function sendToPipeRun(params: {
     console.warn("PIPERUN_API_TOKEN not set; skipping PipeRun sync");
     return { ok: false, skipped: true };
   }
-  const headers = { "Content-Type": "application/json", Accept: "application/json", token: token };
+  const headers = { "Content-Type": "application/json", Accept: "application/json" };
+  const auth = `token=${encodeURIComponent(token)}`;
 
   // 1. Find pipeline by name
   const pipeRes = await fetch(
-    `${PIPERUN_BASE}/pipelines?name=${encodeURIComponent(PIPERUN_PIPELINE_NAME)}`,
+    `${PIPERUN_BASE}/pipelines?${auth}&name=${encodeURIComponent(PIPERUN_PIPELINE_NAME)}`,
     { headers }
   );
   const pipeJson = await pipeRes.json();
@@ -34,7 +35,7 @@ async function sendToPipeRun(params: {
 
   // 2. Get first stage of that pipeline
   const stageRes = await fetch(
-    `${PIPERUN_BASE}/stages?pipeline_id=${pipeline.id}&order=asc&order_by=order`,
+    `${PIPERUN_BASE}/stages?${auth}&pipeline_id=${pipeline.id}&order=asc&order_by=order`,
     { headers }
   );
   const stageJson = await stageRes.json();
@@ -45,7 +46,7 @@ async function sendToPipeRun(params: {
   }
 
   // 3. Create deal with embedded person
-  const dealRes = await fetch(`${PIPERUN_BASE}/deals`, {
+  const dealRes = await fetch(`${PIPERUN_BASE}/deals?${auth}`, {
     method: "POST",
     headers,
     body: JSON.stringify({
