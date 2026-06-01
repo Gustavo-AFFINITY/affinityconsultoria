@@ -11,11 +11,12 @@ async function sendToPipeRun(params: {
   telefone: string;
   valor: string;
 }) {
-  const token = Deno.env.get("PIPERUN_API_TOKEN");
+  const token = Deno.env.get("PIPERUN_API_TOKEN")?.trim();
   if (!token) {
     console.warn("PIPERUN_API_TOKEN not set; skipping PipeRun sync");
     return { ok: false, skipped: true };
   }
+  console.log("PipeRun token length:", token.length);
   const headers = { "Content-Type": "application/json", Accept: "application/json" };
   const auth = `token=${encodeURIComponent(token)}`;
 
