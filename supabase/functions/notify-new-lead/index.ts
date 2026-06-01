@@ -98,7 +98,7 @@ Deno.serve(async (req) => {
     const budget = budgetMap[valor_pretendido] ?? valor_pretendido;
     const waDigits = String(telefone).replace(/\D/g, "");
 
-    const { error } = await supabase.functions.invoke("send-transactional-email", {
+    const emailResult = await supabase.functions.invoke("send-transactional-email", {
       body: {
         templateName: "new-lead-notification",
         recipientEmail: NOTIFY_TO,
@@ -112,16 +112,15 @@ Deno.serve(async (req) => {
         },
       },
     });
+    if (emailResult.error) console.error("email send error", emailResult.error);
 
-    if (error) {
-      console.error("notify-new-lead send error", error);
-      return new Response(JSON.stringify({ ok: false, error: error.message }), {
-        status: 200, // don't block client UX
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
+    // Send to PipeRun (don't fail the request if it errors)
+    const piperun = await sendToPipeRun({ nome, email, telefone, valor: budget }).catch((e) => {
+      console.error("PipeRun sync threw", e);
+      return { ok: false, error: String(e) };
+    });
 
-    return new Response(JSON.stringify({ ok: true }), {
+    return new Response(JSON.stringify({ ok: true, piperun }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (e) {
