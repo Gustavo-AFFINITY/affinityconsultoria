@@ -2,6 +2,74 @@ import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 import { createClient } from "npm:@supabase/supabase-js@2";
 
 const NOTIFY_TO = "gustavo@affinitycor.com.br";
+const PIPERUN_PIPELINE_NAME = "Leads Automóvel";
+const PIPERUN_BASE = "https://api.pipe.run/v1";
+
+async function sendToPipeRun(params: {
+  nome: string;
+  email: string;
+  telefone: string;
+  valor: string;
+}) {
+  const token = Deno.env.get("PIPERUN_API_TOKEN")?.trim();
+  if (!token) {
+    console.warn("PIPERUN_API_TOKEN not set; skipping PipeRun sync");
+    return { ok: false, skipped: true };
+  }
+  console.log("PipeRun token length:", token.length);
+  const headers = { "Content-Type": "application/json", Accept: "application/json" };
+  const auth = `token=${encodeURIComponent(token)}`;
+
+  // 1. Find pipeline by name
+  const pipeRes = await fetch(
+    `${PIPERUN_BASE}/pipelines?${auth}&name=${encodeURIComponent(PIPERUN_PIPELINE_NAME)}`,
+    { headers }
+  );
+  const pipeJson = await pipeRes.json();
+  const pipeline = pipeJson?.data?.find(
+    (p: any) => String(p.name).toLowerCase() === PIPERUN_PIPELINE_NAME.toLowerCase()
+  ) ?? pipeJson?.data?.[0];
+  if (!pipeline?.id) {
+    console.error("PipeRun pipeline not found", pipeJson);
+    return { ok: false, error: "pipeline_not_found" };
+  }
+
+  // 2. Get first stage of that pipeline
+  const stageRes = await fetch(
+    `${PIPERUN_BASE}/stages?${auth}&pipeline_id=${pipeline.id}&order=asc&order_by=order`,
+    { headers }
+  );
+  const stageJson = await stageRes.json();
+  const stage = stageJson?.data?.[0];
+  if (!stage?.id) {
+    console.error("PipeRun stage not found", stageJson);
+    return { ok: false, error: "stage_not_found" };
+  }
+
+  // 3. Create deal with embedded person
+  const dealRes = await fetch(`${PIPERUN_BASE}/deals?${auth}`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      title: `${params.nome} — ${params.valor}`,
+      pipeline_id: pipeline.id,
+      stage_id: stage.id,
+      person: {
+        name: params.nome,
+        email: params.email,
+        phone: params.telefone,
+      },
+      notes: `Valor pretendido: ${params.valor}\nE-mail: ${params.email}\nTelefone: ${params.telefone}`,
+    }),
+  });
+  const dealJson = await dealRes.json();
+  if (!dealRes.ok) {
+    console.error("PipeRun deal creation failed", dealRes.status, dealJson);
+    return { ok: false, error: dealJson };
+  }
+  console.log("PipeRun deal created", dealJson?.data?.id);
+  return { ok: true, dealId: dealJson?.data?.id };
+}
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -32,7 +100,7 @@ Deno.serve(async (req) => {
     const budget = budgetMap[valor_pretendido] ?? valor_pretendido;
     const waDigits = String(telefone).replace(/\D/g, "");
 
-    const { error } = await supabase.functions.invoke("send-transactional-email", {
+    const emailResult = await supabase.functions.invoke("send-transactional-email", {
       body: {
         templateName: "new-lead-notification",
         recipientEmail: NOTIFY_TO,
@@ -46,16 +114,15 @@ Deno.serve(async (req) => {
         },
       },
     });
+    if (emailResult.error) console.error("email send error", emailResult.error);
 
-    if (error) {
-      console.error("notify-new-lead send error", error);
-      return new Response(JSON.stringify({ ok: false, error: error.message }), {
-        status: 200, // don't block client UX
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
+    // Send to PipeRun (don't fail the request if it errors)
+    const piperun = await sendToPipeRun({ nome, email, telefone, valor: budget }).catch((e) => {
+      console.error("PipeRun sync threw", e);
+      return { ok: false, error: String(e) };
+    });
 
-    return new Response(JSON.stringify({ ok: true }), {
+    return new Response(JSON.stringify({ ok: true, piperun }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (e) {
