@@ -16,7 +16,7 @@ async function sendToPipeRun(params: {
     console.warn("PIPERUN_API_TOKEN not set; skipping PipeRun sync");
     return { ok: false, skipped: true };
   }
-  const headers = { "Content-Type": "application/json", Token: token };
+  const headers = { "Content-Type": "application/json", Accept: "application/json", token: token };
 
   // 1. Find pipeline by name
   const pipeRes = await fetch(
